@@ -1062,6 +1062,15 @@
       "import": "./llms/togetherai.js",
       "require": "./llms/togetherai.cjs"
     },
+    "./llms/vllm": {
+      "types": {
+        "import": "./llms/vllm.d.ts",
+        "require": "./llms/vllm.d.cts",
+        "default": "./llms/vllm.d.ts"
+      },
+      "import": "./llms/vllm.js",
+      "require": "./llms/vllm.cjs"
+    },
     "./llms/watsonx_ai": {
       "types": {
         "import": "./llms/watsonx_ai.d.ts",
@@ -2354,6 +2363,10 @@
     "llms/togetherai.js",
     "llms/togetherai.d.ts",
     "llms/togetherai.d.cts",
+    "llms/vllm.cjs",
+    "llms/vllm.js",
+    "llms/vllm.d.ts",
+    "llms/vllm.d.cts",
     "llms/watsonx_ai.cjs",
     "llms/watsonx_ai.js",
     "llms/watsonx_ai.d.ts",
