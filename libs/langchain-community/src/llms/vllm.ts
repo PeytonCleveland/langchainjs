@@ -1,8 +1,7 @@
 import { CallbackManagerForLLMRun } from "@langchain/core/callbacks/manager";
 import { type BaseLLMParams } from "@langchain/core/language_models/llms";
-import { ChatResult } from "@langchain/core/outputs";
-import { BaseMessage } from "@langchain/core/messages";
-import { ChatOpenAI } from "@langchain/openai";
+import { LLMResult } from "@langchain/core/outputs";
+import { OpenAI } from "@langchain/openai";
 
 /**
  * Interface that extends the LLMInput interface and adds additional
@@ -109,7 +108,7 @@ export interface VLLMOpenAIInput extends BaseLLMParams {
  * Class that represents the VLLMOpenAI language model. It extends the
  * BaseOpenAI class and implements the VLLMOpenAIInput interface.
  */
-export class VLLMOpenAI extends ChatOpenAI implements VLLMOpenAIInput {
+export class VLLMOpenAI extends OpenAI implements VLLMOpenAIInput {
   static lc_name() {
     return "VLLMOpenAI";
   }
@@ -190,7 +189,7 @@ export class VLLMOpenAI extends ChatOpenAI implements VLLMOpenAIInput {
       logit_bias: null,
     };
 
-    params.api_key = this.openAIApiKey;
+    params.openAIApiKey = this.openAIApiKey;
     // params.api_base = this.openAIApiBase;
 
     return params;
@@ -219,11 +218,11 @@ export class VLLMOpenAI extends ChatOpenAI implements VLLMOpenAIInput {
   }
 
   async _call(
-    prompts: BaseMessage[],
+    prompts: string[],
     stop?: string[],
     runManager?: CallbackManagerForLLMRun,
     kwargs?: Record<string, unknown>
-  ): Promise<ChatResult> {
+  ): Promise<LLMResult> {
     const params = {
       ...this._defaultParams(),
       ...kwargs,
