@@ -190,7 +190,7 @@ export class VLLMOpenAI extends OpenAI implements VLLMOpenAIInput {
     };
 
     params.openAIApiKey = this.openAIApiKey;
-    // params.api_base = this.openAIApiBase;
+    params.api_base = this.openAIApiBase;
 
     return params;
   }
