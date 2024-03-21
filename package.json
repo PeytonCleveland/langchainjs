@@ -52,7 +52,6 @@
     "typescript": "~5.1.6"
   },
   "dependencies": {
-    "@langchain/cohere": "workspace:^",
     "turbo": "latest"
   },
   "resolutions": {

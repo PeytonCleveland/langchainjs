@@ -2,8 +2,7 @@ import { test, expect } from "@jest/globals";
 import { stringify } from "yaml";
 import { z } from "zod";
 import { RunnableSequence } from "@langchain/core/runnables";
-// import { Cohere } from "@langchain/community/llms/cohere";
-import { Cohere } from "@langchain/cohere";
+import { Cohere } from "@langchain/community/llms/cohere";
 import { OpenAI, ChatOpenAI } from "@langchain/openai";
 
 import {
