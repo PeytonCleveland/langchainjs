@@ -1508,6 +1508,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.9.1",
+    "@langchain/cohere": "workspace:^",
     "@langchain/community": "~0.0.33",
     "@langchain/core": "~0.1.36",
     "@langchain/openai": "~0.0.14",
