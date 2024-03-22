@@ -398,7 +398,7 @@ test("serialize + deserialize llmchain with regex output parser", async () => {
   });
 });
 
-test("serialize + deserialize llmchain with fix + combining output parser", async () => { // this passes now? 
+test("serialize + deserialize llmchain with fix + combining output parser", async () => {
   const llm = new OpenAI({
     temperature: 0.5,
     modelName: "davinci",
