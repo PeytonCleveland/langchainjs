@@ -440,8 +440,7 @@ kwargs:
                 --------------
 
 
-                Above, the Completion did not satisfy the constraints given in
-                the Instructions.
+                Above, the Completion did not satisfy the constraints given in the Instructions.
 
                 Error:
 
@@ -452,8 +451,7 @@ kwargs:
                 --------------
 
 
-                Please try again. Please only respond with an answer that
-                satisfies the constraints laid out in the Instructions:
+                Please try again. Please only respond with an answer that satisfies the constraints laid out in the Instructions:
 "
 `;
 
