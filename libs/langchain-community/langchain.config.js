@@ -90,6 +90,7 @@ export const config = {
     "llms/replicate": "llms/replicate",
     "llms/sagemaker_endpoint": "llms/sagemaker_endpoint",
     "llms/togetherai": "llms/togetherai",
+    "llms/vllm": "llms/vllm",
     "llms/watsonx_ai": "llms/watsonx_ai",
     "llms/writer": "llms/writer",
     "llms/yandex": "llms/yandex",

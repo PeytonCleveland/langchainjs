@@ -87,6 +87,7 @@ export class OpenAI<CallOptions extends OpenAICallOptions = OpenAICallOptions>
   get lc_secrets(): { [key: string]: string } | undefined {
     return {
       openAIApiKey: "OPENAI_API_KEY",
+      openAIApiBase: "OPENAI_API_BASE",
       azureOpenAIApiKey: "AZURE_OPENAI_API_KEY",
       organization: "OPENAI_ORGANIZATION",
     };
@@ -96,6 +97,7 @@ export class OpenAI<CallOptions extends OpenAICallOptions = OpenAICallOptions>
     return {
       modelName: "model",
       openAIApiKey: "openai_api_key",
+      openAIApiBase: "openai_api_base",
       azureOpenAIApiVersion: "azure_openai_api_version",
       azureOpenAIApiKey: "azure_openai_api_key",
       azureOpenAIApiInstanceName: "azure_openai_api_instance_name",
@@ -134,6 +136,8 @@ export class OpenAI<CallOptions extends OpenAICallOptions = OpenAICallOptions>
   streaming = false;
 
   openAIApiKey?: string;
+
+  openAIApiBase?: string;
 
   azureOpenAIApiVersion?: string;
 
@@ -175,6 +179,9 @@ export class OpenAI<CallOptions extends OpenAICallOptions = OpenAICallOptions>
 
     this.openAIApiKey =
       fields?.openAIApiKey ?? getEnvironmentVariable("OPENAI_API_KEY");
+
+    this.openAIApiBase =
+      fields?.openAIApiBase ?? getEnvironmentVariable("OPENAI_API_BASE");
 
     this.azureOpenAIApiKey =
       fields?.azureOpenAIApiKey ??

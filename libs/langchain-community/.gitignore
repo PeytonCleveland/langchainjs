@@ -242,6 +242,10 @@ llms/togetherai.cjs
 llms/togetherai.js
 llms/togetherai.d.ts
 llms/togetherai.d.cts
+llms/vllm.cjs
+llms/vllm.js
+llms/vllm.d.ts
+llms/vllm.d.cts
 llms/watsonx_ai.cjs
 llms/watsonx_ai.js
 llms/watsonx_ai.d.ts

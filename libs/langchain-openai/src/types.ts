@@ -61,6 +61,12 @@ export declare interface OpenAIBaseInput {
    * `OPENAI_API_KEY` environment variable.
    */
   openAIApiKey?: string;
+
+  /**
+   * API base to use when making requests to OpenAI. Defaults to the value of
+   * `OPEN_API_BASE` environment variable.
+   */
+  openAIApiBase?: string;
 }
 
 // TODO use OpenAI.Core.RequestOptions when SDK is updated to make it available
