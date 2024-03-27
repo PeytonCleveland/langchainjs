@@ -102,6 +102,9 @@ export interface VLLMOpenAIInput extends BaseLLMParams {
    * Holds any model parameters valid for `vllm.LLM` call not explicitly specified.
    */
   vllmKwargs?: Record<string, unknown>;
+
+  openAIApiKey?: string;
+  openAIApiBase?: string;
 }
 
 /**
@@ -180,6 +183,8 @@ export class VLLMOpenAI extends OpenAI implements VLLMOpenAIInput {
     this.dtype = fields.dtype;
     this.downloadDir = fields.downloadDir;
     this.vllmKwargs = fields.vllmKwargs ?? {};
+    this.openAIApiKey = fields.openAIApiKey ?? '';
+    this.openAIApiBase = fields.openAIApiBase ?? '';
   }
 
   get _invocation_params() {
@@ -214,6 +219,8 @@ export class VLLMOpenAI extends OpenAI implements VLLMOpenAIInput {
       useBeamSearch: this.useBeamSearch,
       logprobs: this.logprobs,
       topLogprobs: this.topLogprobs,
+      openAIApiKey: this.openAIApiKey,
+      openAIApiBase: this.openAIApiBase
     };
   }
 
@@ -223,6 +230,7 @@ export class VLLMOpenAI extends OpenAI implements VLLMOpenAIInput {
     runManager?: CallbackManagerForLLMRun,
     kwargs?: Record<string, unknown>
   ): Promise<LLMResult> {
+    console.log('### CALL');
     const params = {
       ...this._defaultParams(),
       ...kwargs,
